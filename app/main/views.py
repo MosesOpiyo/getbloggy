@@ -83,7 +83,7 @@ def update_pic(uname):
     return redirect(url_for('main.profile',uname=uname))
 
 
-@main.route('/post/<int:id>/delete', methods=['GET', 'POST'])
+@main.route('/blog/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
 def delete_blog(id):
     """
