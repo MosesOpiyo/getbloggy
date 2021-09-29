@@ -6,17 +6,17 @@
     <h1>Lifestyle Blogs</h1>
     <hr>
     <div>
-        {% for pitch in pitches %}
+        {% for blog in blogs %}
         <div class="row" style="margin-top: 10px;">
             <div class="col">
                 <div>
-                    <h3>Title:{{pitch.pitch_title}}</h3>
+                    <h3>Title:{{blog.blog_title}}</h3>
                 </div>
                 <div>
-                    <h3>Body:{{pitch.pitch_content}}</h3>
+                    <h3>Body:{{blog.blog_content}}</h3>
                 </div>
                 <div>
-                    <h3>Posted:{{pitch.posted.strftime('%Y-%m-%d')}}</h3>
+                    <h3>Posted:{{blog.posted.strftime('%Y-%m-%d')}}</h3>
                 </div>
             </div>
             <div class="col">
