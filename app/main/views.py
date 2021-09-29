@@ -34,8 +34,11 @@ def new_blog():
     if blog_form.validate_on_submit():
         description = blog_form.description.data
         title = blog_form.title.data
+        category = blog_form.category.data
         owner_id = current_user
-        new_blog = Blog(user_id=current_user.id, title=title, description=description)
+
+        new_blog = Blog(user_id=current_user.id, blog_title=title,category = category, blog_description=description)
+        
         db.session.add(new_blog)
         db.session.commit()
 
