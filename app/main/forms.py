@@ -1,11 +1,12 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField,SelectField
 from wtforms.validators import Required, Email, EqualTo
 from wtforms import ValidationError
 
 class BlogForm(FlaskForm):
     title = StringField('Title', validators = [Required()])
     description = TextAreaField("What would you like to Blog?", validators = [Required()])
+    category = SelectField('Type',choices=[('Fashion','Fashion blog'),('Food','Food blog'),('Music','Music blog'),('Lifestyle','Lifestyle blog')],validators=[Required()])
     submit = SubmitField('Submit')
 
 
