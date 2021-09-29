@@ -35,8 +35,8 @@ def new_blog():
         description = blog_form.description.data
         title = blog_form.title.data
         owner_id = current_user
-        new_pitch = Blog(user_id=current_user.id, title=title, description=description)
-        db.session.add(new_pitch)
+        new_blog = Blog(user_id=current_user.id, title=title, description=description)
+        db.session.add(new_blog)
         db.session.commit()
 
         return redirect(url_for('main.index'))
