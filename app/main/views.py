@@ -85,7 +85,7 @@ def update_pic(uname):
 
 @main.route('/post/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
-def delete_post(id):
+def delete_blog(id):
     """
         View delete post function that returns the delete post page and its data
     """
