@@ -13,7 +13,7 @@
                     <h3>Title:{{blog.blog_title}}</h3>
                 </div>
                 <div>
-                    <h3>Body:{{blog.blog_content}}</h3>
+                    <h3>Body:{{blog.blog_description}}</h3>
                 </div>
                 <div>
                     <h3>Posted:{{blog.posted.strftime('%Y-%m-%d')}}</h3>
@@ -24,7 +24,7 @@
                     <form method="POST">
                         {{ form.hidden_tag()}}
                         <div class="mb-3">
-                            {{ form.text.label(class="form-label")}}{{form.text(class="form-control")}}
+                            {{ form.description.label(class="form-label")}}{{form.description(class="form-control")}}
                         </div>
                         {{ form.submit(class="btn btn-secondary")}}
                     </form>

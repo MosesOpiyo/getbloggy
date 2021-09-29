@@ -46,33 +46,37 @@ def new_blog():
 
     return render_template('new_blog.html', blog_form=blog_form, blogs = blogs)
 
-@main.route('/pitches/fashion_blogs',methods=['GET','POST'])
+@main.route('/blogs/fashion_blogs',methods=['GET','POST'])
 def fashion_blogs():
     form = CommentForm()
-    blogs = Blog.query.filter_by(category = 'fashion')
+    blogs = Blog.query.filter_by(category = 'Fashion')
 
     return render_template("fashion.html", blogs = blogs,form = form)
 
 @main.route('/blogs/food_blogs',methods=['GET','POST'])
 def food_blogs():
     form = CommentForm()
-    blogs = Blog.query.filter_by(category = 'food')
+    blogs = Blog.query.filter_by(category = 'Food')
+    print(blogs)
 
     return render_template("food.html", blogs = blogs,form = form)
 
 @main.route('/blogs/music_blogs',methods=['GET','POST'])
 def music_blogs():
     form  = CommentForm()
-    blogs = Blog.query.filter_by(category = 'music')
+    blogs = Blog.query.filter_by(category = 'Music')
 
     return render_template("music.html", blogs = blogs,form = form)
 
 @main.route('/blogs/lifestyle_blogs',methods=['GET','POST'])
 def lifestyle_blogs():
     form  = CommentForm()
-    blogs = Blog.query.filter_by(category = 'lifestyle')
+    blogs = Blog.query.filter_by(category = 'Lifestyle')
 
     return render_template("lifestyle.html", blogs = blogs,form = form)
+
+
+
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
