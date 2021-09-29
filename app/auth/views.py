@@ -17,9 +17,10 @@ def login():
         if user is not None and user.verify_password(login_form.password.data):
             login_user(user,login_form.remember.data)
             return redirect(url_for('main.index'))
-        else:
-            flash('Invalid password or user name')
-            return render_template('auth/login.html',login_form = login_form)
+
+        flash('Invalid password or user name')
+            
+    return render_template('auth/login.html',login_form = login_form)
 
 @auth.route('/signup',methods = ["GET","POST"])
 def signup():
