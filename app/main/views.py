@@ -41,7 +41,7 @@ def new_blog():
 
         return redirect(url_for('main.index'))
 
-    return render_template('pitches.html', form=blog_form, blogs = blogs)
+    return render_template('new_blog.html', form=blog_form, blogs = blogs)
 
 @main.route('/pitches/fashion_blogs',methods=['GET','POST'])
 def fashion_blogs():
