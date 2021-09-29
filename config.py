@@ -1,39 +1,49 @@
 import os
 
 class Config:
-    """This are the configurations for the entire app in every environment
-    """
+    '''
+    General configuration parent class
+    '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    QUOTES_URL = os.environ.get('QUOTE_URL')
+    
 
-class DevConfig(Config):
-    """This are the configurations for the development environment
-    Args:
-        Config ([type]): [description]
-    """
-    DEBUG=True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kenmbira:1234@localhost/bloggy'
-    MAIL_SERVER = 'smtp.googlemail.com'
+    # email configurations
+    MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 class ProdConfig(Config):
+    '''
+    Production  configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kenmbira:1234@localhost/blogspot_test'
-    
+    '''
+    Testing configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:new_password@localhost/postgres'
+
+class DevConfig(Config):
+    '''
+    Development  configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moses:1234@localhost/bloggy'
+
+    DEBUG = True
 
 config_options = {
-    'development':DevConfig,
-    'production':ProdConfig,
-    'test':TestConfig
+'development':DevConfig,
+'production':ProdConfig,
+'test':TestConfig
 }

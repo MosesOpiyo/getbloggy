@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {%endblock%}
 <!-- Content block -->
 {%block content%}
-<div class="jumbotron text-center" style="background-color: white; color:black; padding: 100px 25px;">
-    <h6>ITS BLOGGING TIME</h6>
+<div class="jumbotron text-center" style="background-color: rgb(0, 116, 224); color:black; padding: 100px 25px;">
+    <h4>Its blogging time.And you need to get bloggy with it. </h4>
 </div>
 <div class="container" style="padding-bottom: 20px;">
     <a href="{{url_for('main.new_blog')}}" class="btn btn-success" style="background-color: black;">Create Blog</a>
@@ -18,7 +18,7 @@
             <div class="well well-lg">
                 <h3>Fashion Blogs</h3>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, sint sit.</p>
-                <a href="{{url_for('main.interview_pitches')}}" class="btn btn-primary -center">View Pitch</a>
+                <a href="{{url_for('main.fashion_blogs')}}" class="btn btn-primary -center">View Blogs</a>
             </div>
         </div>
         <div class="col-md-4">
@@ -26,7 +26,7 @@
                 <h3>Food Blogs</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                <a href="{{url_for('main.product_pitches')}}" class="btn btn-primary -center">View Blogs</a>
+                <a href="{{url_for('main.food_blogs')}}" class="btn btn-primary -center">View Blogs</a>
             </div>
         </div>
         <div class="col-md-4">
@@ -34,14 +34,14 @@
                 <h3>Music Blogs</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                <a href="{{url_for('main.promotion_pitches')}}" class="btn btn-primary -center">View Blogs</a>
+                <a href="{{url_for('main.music_blogs')}}" class="btn btn-primary -center">View Blogs</a>
             </div>
         </div>
         <div class="well well-lg">
             <h3>Lifestyle Blogs</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <a href="{{url_for('main.promotion_pitches')}}" class="btn btn-primary -center">View Blog</a>
+            <a href="{{url_for('main.lifestyle_blogs')}}" class="btn btn-primary -center">View Blogs</a>
         </div>
 
     </div>

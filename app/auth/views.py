@@ -9,7 +9,7 @@ from .. import db,login_manager
 def load_user(id):
     return User.query.get(id)
 
-auth.route('/login',methods = ["GET","POST"])
+@auth.route('/login',methods = ["GET","POST"])
 def login():
     login_form = LoginForm()
     if login_form.validate_on_submit():
@@ -17,10 +17,11 @@ def login():
         if user is not None and user.verify_password(login_form.password.data):
             login_user(user,login_form.remember.data)
             return redirect(url_for('main.index'))
-        flash('Invalid password or user name')
-    return render_template('auth/login.html',login_form = login_form)
+        else:
+            flash('Invalid password or user name')
+            return render_template('auth/login.html',login_form = login_form)
 
-auth.route('/SignUp',methods = ["GET","POST"])
+@auth.route('/signup',methods = ["GET","POST"])
 def signup():
     form = RegistrationForm()
     if form.validate_on_submit():

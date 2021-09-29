@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "==1.1.2"
+flask-bootstrap = "*"
+flask-sqlalchemy = "*"
+flask-script = "*"
+flask-migrate = "==2.2.0"
+werkzeug = "==0.16.0"
+flask-login = "*"
+flask-wtf = "*"
+email-validator = "*"
+psycopg2-binary = "*"
+flask-mail = "*"
+flask-uploads = "*"
+gunicorn = "*"
+flask-simplemde = "*"
+markdown2 = "*"
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9.5"
