@@ -1,6 +1,8 @@
 ## GetBllogy 
 This is a web application that displays blogs from multiple users.
 
+<img src="https://github.com/MosesOpiyo/getbloggy/blob/master/app/static/Screenshot%20from%202021-09-30%2014-14-15.png?raw=true">
+
 
 ## App Description
 The application uses a database that stores all user input and according to queries that are passed in via the views.py file, filters the data and brings back only the specified data. This application shows different categories of news on the home page.
