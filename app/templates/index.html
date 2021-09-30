@@ -6,7 +6,14 @@
 <!-- Content block -->
 {%block content%}
 <div class="jumbotron text-center" style="background-color: rgb(0, 116, 224); color:black; padding: 100px 25px;">
-    <h4 style="color: white;">Its blogging time.And you need to get bloggy with it. </h4>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{quote.quote}}</p>
+            <footer class="blockquote-footer">
+                {{quote.author}} <cite title="Source Title"> sourced from: {{quote.permalink}}</cite>
+            </footer>
+        </blockquote>
+    </div>
 </div>
 <div class="container" style="padding-bottom: 20px;">
     <a href="{{url_for('main.new_blog')}}" class="btn btn-success" style="background-color: black;">Create Blog</a>
