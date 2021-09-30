@@ -5,12 +5,14 @@ from app import db,photos
 from app.models import Blog
 from app.main import main
 from app.main.forms import BlogForm,CommentForm
+from ..request import get_quote
 
 @main.route('/')
 def index():
     title = 'GetBloggy'
     blogs = Blog.query.order_by(Blog.posted.desc()).all()
-    return render_template('index.html')
+    quote = get_quote() 
+    return render_template('index.html', quote = quote)
 
 @main.route('/user/<uname>')
 @login_required
